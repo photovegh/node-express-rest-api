@@ -44,3 +44,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`REST API server is running http://localhost:${PORT}`);
 });
+
+/***** HF /products PATCH és a /products DELETE: pont uaúgy kell megcsinálni mint az előzőeket 😊😊😋 *****/
