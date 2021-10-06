@@ -39,9 +39,10 @@ const getToken = (data, callback) =>
 
 //***** password: crypto.createHash('md5').update(data.password).digest('hex') -> Tranlate: A cripto csomagnak van egy fv()-e ami csinyál egy hash-t, mégpedig (MD5)-öset szeretnék, (sztem van SHA is, 512 a csúcs, de a bitcoin is csak az SHA-256-ot használnak), az .update-val megmondom, hogy a body-ban kapott data.password-öt frissítse, és ezt az egész hóbeleblancot alakítsa hex számmá. 😉 *****/
 
+const validateToken = (token, callback) => Users.findOne({token: token}, callback)
 
 
-export { getUsers, getToken};//***** Ha nem egy, default az export, hanem több, akkor a felsorolást {} KAPCSOSZÁRÓJEL-ek közé kell tenni. 😁😁 és a hívó file iportjának a szintaktikáját se felejtsd el átírni 😁 *****/
+export { getUsers, getToken, validateToken};//***** Ha nem egy, default az export, hanem több, akkor a felsorolást {} KAPCSOSZÁRÓJEL-ek közé kell tenni. 😁😁 és a hívó file iportjának a szintaktikáját se felejtsd el átírni 😁 *****/
 
 
 
